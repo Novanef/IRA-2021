@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="cylindre" size="0.050000 0.049171" />
+    <ImageTarget name="tigreblanc" size="0.050000 0.050000" />
+    <ImageTarget name="tigre" size="0.050000 0.050992" />
+    <ImageTarget name="guerrier" size="0.050000 0.050556" />
+    <ImageTarget name="iconlustre" size="0.050000 0.049388" />
+    <ImageTarget name="iconknight" size="0.050000 0.051167" />
+    <ImageTarget name="iconcharite" size="0.050000 0.049696" />
+  </Tracking>
+</QCARConfig>

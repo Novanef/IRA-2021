@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="rook" size="0.040000 0.040000" />
+    <ImageTarget name="bishop" size="0.040000 0.040000" />
+    <ImageTarget name="knight" size="0.040000 0.040000" />
+    <ImageTarget name="queen" size="0.040000 0.040000" />
+    <ImageTarget name="king" size="0.040000 0.040000" />
+    <ImageTarget name="pawn" size="0.040000 0.040000" />
+  </Tracking>
+</QCARConfig>

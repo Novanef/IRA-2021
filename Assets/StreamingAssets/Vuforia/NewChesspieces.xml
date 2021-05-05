@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="emissaire" size="0.060000 0.086817" />
+    <ImageTarget name="soldat" size="0.060000 0.087692" />
+    <ImageTarget name="Charite" size="0.060000 0.087692" />
+    <ImageTarget name="dame" size="0.060000 0.086319" />
+    <ImageTarget name="trappe" size="0.060000 0.084868" />
+    <ImageTarget name="soldat-de-carte" size="0.060000 0.088235" />
+  </Tracking>
+</QCARConfig>
