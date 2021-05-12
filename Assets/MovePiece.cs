@@ -45,7 +45,7 @@ public class MovePiece : MonoBehaviour
     {
         switch (piece.tag)
         {
-            case "pawn":Debug.Log("pawn"); PawnMove(piece) ; break;
+            case "pawn":PawnMove(piece) ; break;
             case "king": KingMove(piece); break;
             case "queen": QueenMove(piece); break;
             case "knight": KnightMove(piece) ; break;
@@ -64,7 +64,7 @@ public class MovePiece : MonoBehaviour
         {
             for(int j=-1; j < 2; j++)
             {
-                if ((i != 0) && (j !=0))
+                if ((i != 0)|| (j !=0))
                 {
                     AdjustPos(GetBloc(piece), i, j);
                 }
@@ -78,18 +78,18 @@ public class MovePiece : MonoBehaviour
     }
     void RookMove(Transform piece)
     {
-        for(int i = -8; i < 8; i++)
+        for(int i = -7; i < 8; i++)
         {
             if(i!=0) AdjustPos(GetBloc(piece), i, 0);
         }
-        for (int j = -8; j < 8; j++)
+        for (int j = -7; j < 8; j++)
         {
             if (j != 0) AdjustPos(GetBloc(piece), 0, j);
         }
     }
     void BishopMove(Transform piece)
     {
-        for (int i = -8; i < 8; i++)
+        for (int i = -7; i < 8; i++)
         {
             if (i != 0)
             {
@@ -117,10 +117,11 @@ public class MovePiece : MonoBehaviour
     {
         return Instantiate(bloc, piece.transform.position, piece.transform.rotation, piece);
     }
-    void AdjustPos(GameObject cube,int x,int y)
+
+    void AdjustPos(GameObject cube, int x, int y)
     {
-        cube.transform.localRotation = Quaternion.Euler(-89.98f, 0, 0); 
-        cube.transform.localPosition += new Vector3(0.08f*x, 0.08f*y, 0);
+        cube.transform.localRotation = Quaternion.Euler(-89.98f, 0, 0);
+        cube.transform.localPosition += new Vector3(0.06f * x, 0.06f * y, 0);
     }
     void DestroyPrev(Transform Prev)
     {

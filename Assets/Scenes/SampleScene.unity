@@ -7735,7 +7735,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012986792146, guid: 857381d11efac0a4d91a3b3b8b94a827, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 4000012986792146, guid: 857381d11efac0a4d91a3b3b8b94a827, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7747,7 +7747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012986792146, guid: 857381d11efac0a4d91a3b3b8b94a827, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071067
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4000012986792146, guid: 857381d11efac0a4d91a3b3b8b94a827, type: 3}
       propertyPath: m_LocalRotation.x
@@ -7759,11 +7759,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012986792146, guid: 857381d11efac0a4d91a3b3b8b94a827, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000012986792146, guid: 857381d11efac0a4d91a3b3b8b94a827, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 4000012986792146, guid: 857381d11efac0a4d91a3b3b8b94a827, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -10564,13 +10564,13 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: 4bc5fd733b147194692297d23f623541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: chessboard2
+  mTrackableName: ARchessboard
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/Chessboard2.xml
-  mAspectRatio: 0.9988584
+  mDataSetPath: Vuforia/Chessboard.xml
+  mAspectRatio: 1
   mImageTargetType: 0
-  mWidth: 0.24
-  mHeight: 0.239726
+  mWidth: 0.165
+  mHeight: 0.165
   mRuntimeTexture: {fileID: 0}
 --- !u!4 &1710442948
 Transform:
@@ -11234,7 +11234,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.12, y: 0, z: 0.119863}
+      m_Extent: {x: 0.1325, y: 0, z: 0.133669}
   m_Shapes:
     vertices: []
     shapes: []
@@ -11313,7 +11313,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: 8fc2f5bd00000000bc7af5bd000000000000803f0000000000000000000000008fc2f5bd00000000bc7af53d000000000000803f00000000000000000000803f8fc2f53d00000000bc7af5bd000000000000803f000000000000803f000000008fc2f53d00000000bc7af53d000000000000803f000000000000803f0000803f
+    _typelessdata: c3f5a8bd00000000c3f5a8bd000000000000803f000000000000000000000000c3f5a8bd00000000c3f5a83d000000000000803f00000000000000000000803fc3f5a83d00000000c3f5a8bd000000000000803f000000000000803f00000000c3f5a83d00000000c3f5a83d000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -11956,7 +11956,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 'chessboard2Material
+  m_Name: 'ARchessboardMaterial
 
     15994'
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
@@ -11971,7 +11971,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 8ad7cc5a4f6349478937971209b47e59, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5bd79c643f2d4dd786a0d4494b636e20, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
