@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 4000011137980350}
   - component: {fileID: 33000012191381918}
   - component: {fileID: 23000012393450942}
+  - component: {fileID: -210393463597969488}
   m_Layer: 0
   m_Name: Chess Queen Black
-  m_TagString: Untagged
+  m_TagString: queen
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,3 +82,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-210393463597969488
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000011492277074}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.029786097, y: 0.029786093, z: 0.057976995}
+  m_Center: {x: 0, y: 9.313226e-10, z: 0.028988434}

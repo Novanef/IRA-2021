@@ -1,9 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="bknight_2" size="0.080000 0.080000" />
+    <ImageTarget name="bknight" size="0.080000 0.080000" />
+    <ImageTarget name="brook_2" size="0.080000 0.080000" />
+    <ImageTarget name="brook" size="0.080000 0.080000" />
+    <ImageTarget name="bbishop_2" size="0.080000 0.080000" />
+    <ImageTarget name="bbishop" size="0.080000 0.080000" />
+    <ImageTarget name="bqueen" size="0.080000 0.080000" />
+    <ImageTarget name="bking" size="0.080000 0.080000" />
+    <ImageTarget name="bpawn_7" size="0.080000 0.080000" />
+    <ImageTarget name="bpawn_6" size="0.080000 0.080000" />
+    <ImageTarget name="bpawn_5" size="0.080000 0.080000" />
+    <ImageTarget name="bpawn_4" size="0.080000 0.080000" />
+    <ImageTarget name="bpawn_3" size="0.080000 0.080000" />
+    <ImageTarget name="bpawn_2" size="0.080000 0.080000" />
+    <ImageTarget name="bpawn_1" size="0.080000 0.080000" />
+    <ImageTarget name="bpawn" size="0.080000 0.080000" />
+    <ImageTarget name="knight_2" size="0.080000 0.080000" />
+    <ImageTarget name="knight" size="0.040000 0.040000" />
+    <ImageTarget name="pawn_8" size="0.080000 0.080000" />
+    <ImageTarget name="pawn_7" size="0.080000 0.080000" />
+    <ImageTarget name="pawn_6" size="0.080000 0.080000" />
+    <ImageTarget name="pawn_5" size="0.080000 0.080000" />
+    <ImageTarget name="pawn_4" size="0.080000 0.080000" />
+    <ImageTarget name="pawn_3" size="0.080000 0.080000" />
+    <ImageTarget name="pawn_2" size="0.080000 0.080000" />
+    <ImageTarget name="bishop_2" size="0.080000 0.080000" />
+    <ImageTarget name="rook_2" size="0.080000 0.080000" />
     <ImageTarget name="rook" size="0.040000 0.040000" />
     <ImageTarget name="bishop" size="0.040000 0.040000" />
-    <ImageTarget name="knight" size="0.040000 0.040000" />
     <ImageTarget name="queen" size="0.040000 0.040000" />
     <ImageTarget name="king" size="0.040000 0.040000" />
     <ImageTarget name="pawn" size="0.040000 0.040000" />
