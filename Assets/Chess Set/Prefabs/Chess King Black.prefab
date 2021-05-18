@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33000010981930260}
   - component: {fileID: 23000012459057614}
   - component: {fileID: 2079603780127117302}
+  - component: {fileID: -1904565990352495819}
   m_Layer: 0
   m_Name: Chess King Black
   m_TagString: king
@@ -95,3 +96,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.029786097, y: 0.029786095, z: 0.0603366}
   m_Center: {x: 0, y: 9.313227e-10, z: 0.03465802}
+--- !u!114 &-1904565990352495819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013427829390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c183017d76ffbf4eb1e5c3d56b22485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coordx: 0
+  coordy: 0

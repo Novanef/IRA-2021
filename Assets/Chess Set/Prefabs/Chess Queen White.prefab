@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33000011359460492}
   - component: {fileID: 23000012377736356}
   - component: {fileID: 3750310696362276565}
+  - component: {fileID: 7372254104896429989}
   m_Layer: 0
   m_Name: Chess Queen White
   m_TagString: queen
@@ -95,3 +96,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.029786097, y: 0.029786093, z: 0.05245074}
   m_Center: {x: 0, y: 9.313226e-10, z: 0.03175157}
+--- !u!114 &7372254104896429989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000011613667446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c183017d76ffbf4eb1e5c3d56b22485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coordx: 0
+  coordy: 0

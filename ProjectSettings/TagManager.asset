@@ -11,6 +11,7 @@ TagManager:
   - pawn
   - bishop
   - rook
+  - case
   layers:
   - Default
   - TransparentFX

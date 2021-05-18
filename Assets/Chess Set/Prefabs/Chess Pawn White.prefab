@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33000012760542366}
   - component: {fileID: 23000012148006776}
   - component: {fileID: -2693179571445638156}
+  - component: {fileID: 3241841835034106350}
   m_Layer: 0
   m_Name: Chess Pawn White
   m_TagString: pawn
@@ -93,5 +94,19 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.029786097, y: 0.029786093, z: 0.047155745}
-  m_Center: {x: 0, y: 9.313224e-10, z: 0.013577873}
+  m_Size: {x: 0.029786097, y: 0.029786093, z: 0.038749304}
+  m_Center: {x: 0, y: 0.0000000011920928, z: 0.0177811}
+--- !u!114 &3241841835034106350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013277376148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c183017d76ffbf4eb1e5c3d56b22485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coordx: 0
+  coordy: 0

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6172344038841939081}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: case
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,3 +109,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitting: {fileID: 0}
+  coordx: 0
+  coordy: 0
+  occupied: -1
+  free: 1
+  targeted: 0
+  take: 0
+  rend: {fileID: 0}
+  green: {fileID: 2100000, guid: ac1a01f38b5e52548915e7be856883aa, type: 2}
+  red: {fileID: 2100000, guid: 51d928efb3ef13c4e9794995c7fd4bd4, type: 2}
