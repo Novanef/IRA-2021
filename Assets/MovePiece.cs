@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MovePiece : MonoBehaviour
 {
     [SerializeField]
     private GameObject bloc;
     private int turn = 0;
-    private GameObject CurrentPiece;
-    private GameObject PreviousPiece;
+    public GameObject CurrentPiece;
+    public GameObject PreviousPiece;
     [SerializeField]
     private GameObject grid;
     private bool moving = false;
@@ -16,76 +17,108 @@ public class MovePiece : MonoBehaviour
     private PieceBehavior BKing;
     [SerializeField]
     private PieceBehavior WKing;
+    [SerializeField]
+    private Text turncount;
+    [SerializeField]
+    private Text Wintext;
+    [SerializeField]
+    public GameObject Buttons;
+    [SerializeField]
+    public ButtonsBehavior Buttonscript;
+    [SerializeField]
+    private GameObject EndgameMenu;
+    [SerializeField]
+    private AudioSource Movesound;
+    private bool pause = false;
+    public bool end = false;
     // Start is called before the first frame update
     void Start()
     {
         CurrentPiece = null;
+        PreviousPiece = null;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (!end)
         {
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit, 100.0f))
+            if (Input.GetKeyDown(KeyCode.Escape) && !pause && !Buttonscript.Activate)
             {
-                if (!hit.transform.CompareTag("Chessboard"))
+                EndgameMenu.SetActive(true);
+                pause = true;
+            }
+            else if (Input.GetKeyDown(KeyCode.Escape) && pause && !Buttonscript.Activate)
+            {
+                EndgameMenu.SetActive(false);
+                pause = false;
+            }
+            if (!Buttonscript.Activate || !pause)
+            {
+                if (Input.GetMouseButtonDown(0))
                 {
-                    if (!hit.transform.CompareTag("case"))
+                    RaycastHit hit;
+                    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                    if (Physics.Raycast(ray, out hit, 100.0f))
                     {
-                        Debug.Log("You selected the " + hit.transform.name);
-                        if (!moving && CurrentPiece != hit.transform.gameObject&&turn== hit.transform.gameObject.GetComponent<PieceBehavior>().player)
+                        if (!hit.transform.CompareTag("Chessboard"))
                         {
-                            PreviousPiece = CurrentPiece;
-                            CurrentPiece = hit.transform.gameObject;
-                            DestroyPrev();
-                            DisplayMove(hit.transform);
-                            moving = true;
-                        }
-                        else if (moving && CurrentPiece != hit.transform.gameObject && turn == hit.transform.gameObject.GetComponent<PieceBehavior>().player)
-                        {
-                            PreviousPiece = CurrentPiece;
-                            CurrentPiece = hit.transform.gameObject;
-                            DestroyPrev();
-                            DisplayMove(hit.transform);
-                            moving = true;
-                        }
-                        if (moving&& hit.transform.GetComponent<PieceBehavior>().attacked&&hit.transform.GetComponent<PieceBehavior>().player != CurrentPiece.GetComponent<PieceBehavior>().player)
-                        {
-                            hit.transform.gameObject.GetComponent<PieceBehavior>().Remove();
-                            Transform temp = hit.transform.GetComponent<PieceBehavior>().curcase.transform;
-                            Move(CurrentPiece, temp);
-                            DestroyPrev();
-                            PreviousPiece = CurrentPiece;
-                            CurrentPiece = null;
-                            Newturn();
-                        }
-                    }
-                    else if(moving && hit.transform.GetComponent<CubeBehavior>().take)
-                    {
-                        hit.transform.GetComponent<CubeBehavior>().Remove();
-                        Transform temp = hit.transform.gameObject.transform;
-                        Move(CurrentPiece, temp);
-                        DestroyPrev();
-                        PreviousPiece = CurrentPiece;
-                        CurrentPiece = null;
-                        Newturn();
-                    }
-                    else if(moving&&hit.transform.GetComponent<CubeBehavior>().targeted)
-                    {
-                        Transform temp = hit.transform.gameObject.transform;
-                        Move(CurrentPiece,temp);
-                        DestroyPrev();
-                        PreviousPiece = CurrentPiece;
-                        CurrentPiece = null;
-                        Newturn();
-                    }
+                            if (!hit.transform.CompareTag("case"))
+                            {
+                                Debug.Log("You selected the " + hit.transform.name);
+                                if (!moving && CurrentPiece != hit.transform.gameObject && turn == hit.transform.gameObject.GetComponent<PieceBehavior>().player)
+                                {
+                                    PreviousPiece = CurrentPiece;
+                                    CurrentPiece = hit.transform.gameObject;
+                                    DestroyPrev();
+                                    DisplayMove(hit.transform);
+                                    moving = true;
+                                }
+                                else if (moving && CurrentPiece != hit.transform.gameObject && turn == hit.transform.gameObject.GetComponent<PieceBehavior>().player)
+                                {
+                                    PreviousPiece = CurrentPiece;
+                                    CurrentPiece = hit.transform.gameObject;
+                                    DestroyPrev();
+                                    DisplayMove(hit.transform);
+                                    moving = true;
+                                }
+                                if (moving && hit.transform.GetComponent<PieceBehavior>().attacked && hit.transform.GetComponent<PieceBehavior>().player != CurrentPiece.GetComponent<PieceBehavior>().player)
+                                {
+                                    hit.transform.gameObject.GetComponent<PieceBehavior>().Remove();
+                                    Transform temp = hit.transform.GetComponent<PieceBehavior>().curcase.transform;
+                                    Move(CurrentPiece, temp);
+                                    DestroyPrev();
+                                    PreviousPiece = CurrentPiece;
+                                    CurrentPiece = null;
+                                    Newturn();
+                                }
+                            }
+                            else if (moving && hit.transform.GetComponent<CubeBehavior>().take)
+                            {
+                                hit.transform.GetComponent<CubeBehavior>().Remove();
+                                Transform temp = hit.transform.gameObject.transform;
+                                Move(CurrentPiece, temp);
+                                DestroyPrev();
+                                PreviousPiece = CurrentPiece;
+                                CurrentPiece = null;
+                                Newturn();
+                            }
+                            else if (moving && hit.transform.GetComponent<CubeBehavior>().targeted)
+                            {
+                                Transform temp = hit.transform.gameObject.transform;
+                                Move(CurrentPiece, temp);
+                                DestroyPrev();
+                                PreviousPiece = CurrentPiece;
+                                CurrentPiece = null;
+                                Newturn();
+                            }
 
+                        }
+                    }
                 }
             }
         }
+        
     }
 
     void DisplayMove(Transform piece)
@@ -105,8 +138,8 @@ public class MovePiece : MonoBehaviour
         PieceBehavior pawn = CurrentPiece.GetComponent<PieceBehavior>();
         if (pawn.player == 0)
         {
-            if (pawn.coordy == 2&& CheckCase(0, 2)) enableCase(0, 2);
-            if(CheckCase(0,1)) enableCase(0, 1);
+            if (pawn.coordy == 2 && CheckCase(0, 2)) enableCase(0, 2);
+            if (CheckCase(0, 1)) enableCase(0, 1);
             if (OccupCase(1, 1))
             {
                 enableCase(1, 1);
@@ -128,6 +161,7 @@ public class MovePiece : MonoBehaviour
             {
                 enableCase(-1, -1);
             }
+            
         }
     }
     void KingMove(Transform piece)
@@ -308,6 +342,7 @@ public class MovePiece : MonoBehaviour
         {
             piece.transform.position+= new Vector3(0,0.012f,0);
         }
+        Movesound.Play();
         pos.GetComponent<CubeBehavior>().UpdatePos();
     }
     void CheckWin()
@@ -323,17 +358,29 @@ public class MovePiece : MonoBehaviour
     }
     void Endgame(int i)
     {
+        EndgameMenu.SetActive(true);
+        end = true;
         if (i == 0)
         {
             print("White win");
+            Wintext.text = "WHITE WINS";
         }
         if (i == 1)
         {
             print("Black win");
+            Wintext.text = "BLACK WINS";
+        }
+        if (i == 2)
+        {
+            print("Draw");
+            Wintext.text = "DRAW";
         }
     }
     void Newturn()
     {
         turn = (turn + 1) % 2;
+        if(turn%2==0) turncount.text = string.Concat("Current Turn : ", "White");
+        else turncount.text = string.Concat("Current Turn : ", "Black");
     }
+    
 }

@@ -32,6 +32,10 @@ public class CubeBehavior : MonoBehaviour
             piece.curcase = this;
         }
     }
+    private void OnEnable()
+    {
+        UpdatePos();
+    }
 
     // Update is called once per frame
     void Update()
