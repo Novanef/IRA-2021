@@ -115,6 +115,9 @@ MonoBehaviour:
   free: 1
   targeted: 0
   take: 0
+  kingcase: 0
   rend: {fileID: 0}
+  orange: {fileID: 2100000, guid: dc8776ba234fac3439a41ba83f729d24, type: 2}
   green: {fileID: 2100000, guid: ac1a01f38b5e52548915e7be856883aa, type: 2}
   red: {fileID: 2100000, guid: 51d928efb3ef13c4e9794995c7fd4bd4, type: 2}
+  piece: {fileID: 0}

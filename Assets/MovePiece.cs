@@ -7,6 +7,8 @@ public class MovePiece : MonoBehaviour
 {
     [SerializeField]
     private GameObject bloc;
+    [SerializeField]
+    private BoardState Manager;
     private int turn = 0;
     public GameObject CurrentPiece;
     public GameObject PreviousPiece;
@@ -17,6 +19,10 @@ public class MovePiece : MonoBehaviour
     private PieceBehavior BKing;
     [SerializeField]
     private PieceBehavior WKing;
+    [SerializeField]
+    private GameObject Whites;
+    [SerializeField]
+    private GameObject Blacks;
     [SerializeField]
     private Text turncount;
     [SerializeField]
@@ -273,10 +279,6 @@ public class MovePiece : MonoBehaviour
             }
         }
     }
-    GameObject GetBloc(Transform piece)
-    {
-        return Instantiate(bloc, piece.transform.position, piece.transform.rotation, piece);
-    }
 
     void enableCase(int x, int y)
     {
@@ -337,6 +339,8 @@ public class MovePiece : MonoBehaviour
         CubeBehavior lastcase = grid.transform.Find(string.Concat(coord.coordx, coord.coordy)).GetComponent<CubeBehavior>();
         lastcase.free = true;
         lastcase.occupied = -1;
+        lastcase.danger = false;
+        lastcase.kingcase = false;
         piece.transform.position = pos.transform.position;
         if (piece.CompareTag("pawn"))
         {
@@ -379,8 +383,17 @@ public class MovePiece : MonoBehaviour
     void Newturn()
     {
         turn = (turn + 1) % 2;
-        if(turn%2==0) turncount.text = string.Concat("Current Turn : ", "White");
-        else turncount.text = string.Concat("Current Turn : ", "Black");
+        if (turn % 2 == 0)
+        {
+            turncount.text = string.Concat("Current Turn : ", "White");
+        }
+        else
+        {
+            turncount.text = string.Concat("Current Turn : ", "Black");
+        }
+        Manager.CheckReset();
+        Manager.IsCheck(Whites, BKing);
+        Manager.IsCheck(Blacks, WKing);
     }
     
 }

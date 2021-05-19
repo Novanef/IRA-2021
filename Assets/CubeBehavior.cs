@@ -11,10 +11,13 @@ public class CubeBehavior : MonoBehaviour
     public bool free = true;
     public bool targeted = false;
     public bool take = false;
+    public bool danger=false;
+    public bool kingcase = false;
     public MeshRenderer rend;
+    public Material orange;
     public Material green;
     public Material red;
-    private PieceBehavior piece;
+    public PieceBehavior piece;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +33,7 @@ public class CubeBehavior : MonoBehaviour
             piece.coordy = coordy;
             piece.attacked = false;
             piece.curcase = this;
+            danger = false;
         }
     }
     private void OnEnable()
@@ -46,13 +50,22 @@ public class CubeBehavior : MonoBehaviour
     {
         if (!targeted)
         {
-            rend.enabled = false;
+            if (danger)
+            {
+                rend.enabled = true;
+            }
+            else rend.enabled = false;
         }
         else rend.enabled = true;
+        
         if (take)
         {
             rend.material = red;
             piece.attacked = true;
+        }
+        else if(danger)
+        {
+            rend.material = orange;
         }
         else
         {
@@ -72,8 +85,19 @@ public class CubeBehavior : MonoBehaviour
             piece.coordy = coordy;
             piece.attacked = false;
             piece.curcase = this;
+            danger = false;
+            if (hitpiece.transform.tag == "king")
+            {
+                kingcase = true;
+            }
+            else
+            {
+                kingcase = false;
+            }
         }
         else{
+            danger = false;
+            kingcase = false;
             piece = null;
             }
     }
