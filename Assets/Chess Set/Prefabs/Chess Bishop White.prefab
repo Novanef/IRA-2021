@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 4000010786065248}
   - component: {fileID: 33000012446370640}
   - component: {fileID: 23000011962316772}
+  - component: {fileID: 6385858641132842862}
+  - component: {fileID: -7661567035979995693}
   m_Layer: 0
   m_Name: Chess Bishop White
-  m_TagString: Untagged
+  m_TagString: bishop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,3 +83,30 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6385858641132842862
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000014291839912}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.029786097, y: 0.029786093, z: 0.04801565}
+  m_Center: {x: 0, y: 9.313226e-10, z: 0.028852124}
+--- !u!114 &-7661567035979995693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000014291839912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c183017d76ffbf4eb1e5c3d56b22485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coordx: 0
+  coordy: 0
