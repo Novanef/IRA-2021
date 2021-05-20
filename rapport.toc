@@ -1,0 +1,19 @@
+\babel@toc {french}{}
+\contentsline {section}{\numberline {1}Environnement logiciel}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Unity}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Vuforia}{3}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Choix de la technique de recalage}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Premier essai}{3}{subsection.2.1}%
+\contentsline {paragraph}{}{3}{section*.2}%
+\contentsline {subsection}{\numberline {2.2}Deuxième essai}{3}{subsection.2.2}%
+\contentsline {paragraph}{}{3}{section*.3}%
+\contentsline {subsection}{\numberline {2.3}Choix final}{3}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Développement}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Échiquier}{5}{subsection.3.1}%
+\contentsline {paragraph}{}{5}{section*.5}%
+\contentsline {subsection}{\numberline {3.2}Pièces}{5}{subsection.3.2}%
+\contentsline {paragraph}{}{5}{section*.6}%
+\contentsline {section}{\numberline {4}Interface}{5}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Interface de jeu}{5}{subsection.4.1}%
+\contentsline {paragraph}{}{5}{section*.7}%
+\contentsline {subsection}{\numberline {4.2}Fin de partie}{5}{subsection.4.2}%

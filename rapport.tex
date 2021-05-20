@@ -1,0 +1,70 @@
+\documentclass{article}
+\usepackage[a4paper,left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage[utf8]{inputenc}  
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{adjustbox}
+\usepackage{dsfont}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{svg}
+\usepackage{diagbox}
+\setsvg{inkscapeexe={"D:/Programmes/Inkscape/bin/inkscape.com"}}
+\usepackage{pdfpages}
+\usepackage{algorithmic}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+\newcommand{\hsp}{\hspace{20pt}}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand*{\logeq}{\ratio\Leftrightarrow}
+
+\title{Option IRA – Réalité Augmentée \\Mini-projet : Jeu d’échec augmenté}
+\author{Timothé Rios - Nicolas Venot}
+\date{mai 2021}
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+ 
+\section{Environnement logiciel}
+\subsection{Unity}
+Unity 2021.1.13f1
+\subsection{Vuforia}
+Vuforia 9.8.5
+\section{Choix de la technique de recalage}
+\subsection{Premier essai}
+\paragraph{} Notre idée de départ était d'utiliser un véritable jeu d'échec, avec ses pièces et son plateau, et de les faire reconnaître par \textit{Unity} et \textit{Vuforia}. Ceci nous auraît permis d'afficher les déplacements possibles de pièces, les position d'échec ou de mat, les possibilités de roque, ... tout en gardant les sensations physiques d'un véritable jeu de société.
+Cependant, il nous est vite apparu que les pièces d'un jeu d'échec n'avait pas assez de \textit{feature points}. En conséquence, la détection des pièces était trop peu efficace pour notre projet. De plus, la taille de l'échiquier et ses motifs répétitifs rendaient aussi impossible sa reconnaissance.
+Nous avons donc décidé d'abandonner cette méthode.
+\subsection{Deuxième essai}
+\paragraph{}La démarche que nous avons testée en deuxième ne nécessitait plus de pièces à proprement parler. Chaque pièce du jeu d'échec était représentée par un petit \textit{AR code} que nous pouvions ensuite déplacer autour d'un plus grand \textit{AR code} correspondant au plateau. Cependant, la superposition des \textit{AR codes} et des problèmes quant au passage de l'environnement réel 3D à la scène 2D faisaient perdre trop facilement le suivi des pièces et contrariaient le positionnement des objets virtuels (cases du plateau, mise en surbrillance des coups possibles,...).
+Nous avons décidé d'abandonner aussi cette méthode. 
+\subsection{Choix final}
+La méthode que nous avons finalement choisie ne comporte qu'un seul \textit{AR code}. Celui-ci permet de faire apparaître à la fois le plateau de jeu et les pièces d'échec. Les déplacements doivent donc se faire avec l'appareil de réalité augmentée (téléphone portable ou ordinateur). Cette méthode permet d'éviter tout problème de superposition des \textit{AR codes} et le seul que nous utilisons est facilement reconnaissable par \textit{Unity} et \textit{Vuforia}.
+\begin{center}
+    \begin{figure}[H]
+        \makebox[\textwidth][c]{        
+            \includegraphics[width = 1.3\textwidth]{ARChess.png}}
+        \caption{AR code utilisé pour le jeu d'échec}
+    \end{figure}
+\end{center}
+\newpage
+\section{Développement}
+\subsection{Échiquier}
+\paragraph{}Afin de gérer les déplacements des pièces, nous avons utilisé une grille des cases de l'échiquier que nous superposons à ce dernier. Cette grille nous permet de calculer la position des centres des cases afin d'y envoyer la pièce que nous souhaitons bouger. C'est aussi cette grille qui nous permet de mettre en surbrillance les cases pertinentes pour le coup que nous voulons jouer.
+\subsection{Pièces}
+\paragraph{}Chaque pièce virtuelle se voit attacher un script qui permet de gérer et d'identifier sa position au sein de l'échiquier. Ce script comporte aussi d'autres informations relatifs à la pièce, comme le joueur auquel elle appartient ou encore les pièces ennemies qui la menacent, s'il y en a.
+chaque pièce a un script qui identifie leur position, le joueur, et la menace possible
+\section{Interface}
+\subsection{Interface de jeu}
+\paragraph{}Au cours de la partie, sont affichées sur l'écran différentes informations. Cet affichage fixe nous informe du joueur dont c'est le tour de jouer et des mises en échec s'il y en a. Quand un joueur sélectionne une pièce, des informations supplémentaires apparaissent : les cases sur lesquelles la pièce sélectionnée peut être déplacée sont surlignées en vert, sauf si elles contiennent une pièce ennemie : elles sont dans ce cas surlignées en rouge.
+\subsection{Fin de partie}
+minimaliste, efficace, 
+\end{document} 
